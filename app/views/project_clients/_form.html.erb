@@ -1,0 +1,37 @@
+<%= form_with(model: project_client) do |form| %>
+  <% if project_client.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(project_client.errors.count, "error") %> prohibited this project_client from being saved:</h2>
+
+      <ul>
+        <% project_client.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :contact_no, style: "display: block" %>
+    <%= form.number_field :contact_no %>
+  </div>
+
+  <div>
+    <%= form.label :contact_support, style: "display: block" %>
+    <%= form.text_field :contact_support %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
